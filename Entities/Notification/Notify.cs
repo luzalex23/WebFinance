@@ -15,7 +15,7 @@ namespace Entities.Notification
         }
 
         [NotMapped]
-        public string propertyName { get; set; }
+        public string PropertyName { get; set; }
 
         [NotMapped]
         public string message { get; set; }
@@ -34,7 +34,7 @@ namespace Entities.Notification
                 notify.Add(new Notify
                 {
                     message = "Campo Obrigatório",
-                    NomePropriedade = propertyName
+                    PropertyName = propertyName
                 });
 
                 return false;
@@ -46,12 +46,12 @@ namespace Entities.Notification
 
         public bool PropertyValidationStrin(int value, string propertyName)
         {
-            if (valor < 1 || string.IsNullOrWhiteSpace(nomePropriedade))
+            if (value < 1 || string.IsNullOrWhiteSpace(propertyName))
             {
                 notify.Add(new Notify
                 {
                     message = "Campo Obrigatório",
-                    NomePropriedade = propertyName
+                    PropertyName = propertyName
                 });
 
                 return false;
