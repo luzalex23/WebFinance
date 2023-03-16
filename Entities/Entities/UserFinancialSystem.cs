@@ -7,14 +7,18 @@ using System.Threading.Tasks;
 
 namespace Entities.Entities
 {
-    [Table("Categoria")]
-    public class Category : Base
+    [Table("UsuarioSistemaFinanceiro")]
+    public class UserFinancialSystem : Base
     {
-        public Category() { }
+        public int Id { get; set; }
+        public string EmailUser { get; set; }
+        public bool Administrator { get; set; }
+        public bool ActualSystem { get; set; }
+
+
         [ForeignKey("SistemaFinanceiro")]
         [Column(Order = 1)]
-        public int SytemId { get; set; }
+        public int IdSistema { get; set; }
         public virtual FinancialSystem FinancialSystem { get; set; }
-
     }
 }

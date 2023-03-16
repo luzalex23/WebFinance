@@ -12,7 +12,6 @@ namespace Entities.Entities
     public class FinancialSystem : Base
     {
         public FinancialSystem() { }
-        public string Name { get; set; }
         public int Month { get; set; }
         public int Year { get; set; }
         public int ClosureDay { get; set; }
