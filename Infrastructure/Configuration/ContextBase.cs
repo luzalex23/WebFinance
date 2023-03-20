@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Entities.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -13,16 +16,16 @@ namespace Infrastructure.Configuration
         {
         }
 
-        public DbSet<SistemaFinanceiro> SistemaFinanceiro { set; get; }
-        public DbSet<UsuarioSistemaFinanceiro> UsuarioSistemaFinanceiro { set; get; }
-        public DbSet<Categoria> Categoria { set; get; }
-        public DbSet<Despesa> Despesa { set; get; }
+        public DbSet<FinancialSystem> SistemaFinanceiro { set; get; }
+        public DbSet<UserFinancialSystem> UsuarioSistemaFinanceiro { set; get; }
+        public DbSet<Category> Categoria { set; get; }
+        public DbSet<Expense> Despesa { set; get; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(ObterStringConexao());
+               // optionsBuilder.UseSqlServer(ObterStringConexao());
                 base.OnConfiguring(optionsBuilder);
             }
         }
@@ -39,7 +42,7 @@ namespace Infrastructure.Configuration
 
         public string ObterStringConexao()
         {
-            return "Data Source=NBQSP-FC693;Initial Catalog=FINANCEIRO_2023;Integrated Security=False;User ID=sa;Password=1234;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
+           // return "Data Source=NBQSP-FC693;Initial Catalog=FINANCEIRO_2023;Integrated Security=False;User ID=sa;Password=1234;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
 
             //return "Data Source=NBQSP-FC693;Initial Catalog=FINANCEIRO_2023;Integrated Security=True"; // Evitar
         }
