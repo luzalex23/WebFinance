@@ -11,8 +11,8 @@ namespace Domain.Servicos
 {
     public class DespesaServico
     {
-        private readonly IExpenseService _InterfaceDespesa;
-        public DespesaServico(IExpenseService InterfaceServico)
+        private readonly IExpense _InterfaceDespesa;
+        public DespesaServico(IExpense InterfaceServico)
         {
             _InterfaceDespesa = InterfaceServico;
         }
@@ -34,9 +34,9 @@ namespace Domain.Servicos
             var data = DateTime.UtcNow;
             despesa.Update = data;
 
-            if (despesa.Pago)
+            if (despesa.PaidOut)
             {
-                despesa.DataPagamento = data;
+                despesa.PaidDate = data;
             }
 
             var valido = despesa.PropertyValidationString(despesa.Nome, "Nome");

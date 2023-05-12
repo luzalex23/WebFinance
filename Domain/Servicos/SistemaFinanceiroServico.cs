@@ -12,8 +12,8 @@ namespace Domain.Servicos
 {
     public class SistemaFinanceiroServico : IFinancialSystemService
     {
-        private readonly IFinancialSystemService _interfaceSistemaFinanceiro;
-        public SistemaFinanceiroServico(IFinancialSystemService interfaceSistemaFinanceiro)
+        private readonly IFinancialSystem _interfaceSistemaFinanceiro;
+        public SistemaFinanceiroServico(IFinancialSystem interfaceSistemaFinanceiro)
         {
             _interfaceSistemaFinanceiro = interfaceSistemaFinanceiro;
         }

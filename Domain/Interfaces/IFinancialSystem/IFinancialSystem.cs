@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Interfaces.IFinancialSystem
 {
-    public interface IFinancialSystem
+    public interface IFinancialSystem : InterfaceGeneric<FinancialSystem>
     {
-        Task AdicionarSistemaFinanceiro(FinancialSystem sistemaFinanceiro);
-        Task AtualizarSistemaFinanceiro(FinancialSystem sistemaFinanceiro);
+        Task<IList<FinancialSystem>> ListaSistemasUsuario(string emailUsuario);
+
     }
 }
