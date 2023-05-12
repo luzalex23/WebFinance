@@ -27,7 +27,7 @@ namespace Entities.Notification
 
         /*Validations*/
 
-        public bool PropertyValidationStrin(string value, string propertyName)
+        public bool PropertyValidationString(string value, string propertyName)
         {
             if (string.IsNullOrWhiteSpace(value) || string.IsNullOrWhiteSpace(propertyName))
             {
