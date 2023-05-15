@@ -36,8 +36,10 @@ namespace Infrastructure.Repositories
         {
             using (var banco = new ContextBase(_OptionsBuilder))
             {
+#pragma warning disable CS8603 // Possible null reference return.
                 return await
                     banco.UsuarioSistemaFinanceiro.AsNoTracking().FirstOrDefaultAsync(x => x.EmailUser.Equals(emailUsuario));
+#pragma warning restore CS8603 // Possible null reference return.
             }
         }
 

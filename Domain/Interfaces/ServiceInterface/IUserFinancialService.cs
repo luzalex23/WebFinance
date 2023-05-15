@@ -1,4 +1,5 @@
-﻿using Entities.Entities;
+﻿using Domain.Interfaces.Generic;
+using Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Interfaces.ServiceInterface
 {
-    public interface IUserFinancialService
+    public interface IUserFinancialService : InterfaceGeneric<FinancialSystem>
     {
         Task CadastrarUsuarioNoSistema(UserFinancialSystem usuarioSistemaFinanceiro);
 
