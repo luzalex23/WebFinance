@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Interfaces.ServiceInterface
 {
-    internal interface IServiceCategory
+    public interface IServiceCategory
     {
         Task AdicionarCategoria(Category catagoria);
         Task AtualizarCategoria(Category catagoria);

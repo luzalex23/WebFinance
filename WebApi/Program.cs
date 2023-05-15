@@ -12,6 +12,7 @@ using Domain.Interfaces.ServiceInterface;
 using Domain.Interfaces.IUserFinancialSystem;
 
 var builder = WebApplication.CreateBuilder(args);
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -40,7 +41,6 @@ builder.Services.AddSingleton<IServiceCategory, CategoriaServico>();
 builder.Services.AddSingleton<IExpenseService, DespesaServico>();
 builder.Services.AddSingleton<IFinancialSystemService, SistemaFinanceiroServico>();
 builder.Services.AddSingleton<IUserFinancial, UsuarioSistemaFinanceiroServico>();
-
 
 var app = builder.Build();
 
