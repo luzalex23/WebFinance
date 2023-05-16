@@ -9,7 +9,7 @@ using Domain.Interfaces.IExpense;
 
 namespace Domain.Servicos
 {
-    public class DespesaServico
+    public class DespesaServico : IExpenseService
     {
         private readonly IExpense _InterfaceDespesa;
         public DespesaServico(IExpense InterfaceServico)

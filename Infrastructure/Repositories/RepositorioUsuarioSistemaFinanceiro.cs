@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces.IUserFinancialSystem;
+﻿using Domain.Interfaces.Generic;
+using Domain.Interfaces.IUserFinancialSystem;
 using Domain.Interfaces.ServiceInterface;
 using Entities.Entities;
 using Infrastructure.Configuration;
@@ -12,13 +13,28 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
-    public class RepositorioUsuarioSistemaFinanceiro : RepositoryGenerics<UserFinancialSystem>, IUserFinancial
+    public class RepositorioUsuarioSistemaFinanceiro : RepositoryGenerics<UserFinancialSystem>, IUserFinancialService
     {
         private readonly DbContextOptions<ContextBase> _OptionsBuilder;
 
         public RepositorioUsuarioSistemaFinanceiro()
         {
             _OptionsBuilder = new DbContextOptions<ContextBase>();
+        }
+
+        public Task Add(FinancialSystem Objeto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task CadastrarUsuarioNoSistema(UserFinancialSystem usuarioSistemaFinanceiro)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Delete(FinancialSystem Objeto)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<IList<UserFinancialSystem>> ListarUsuariosSistema(int IdSistema)
@@ -36,10 +52,8 @@ namespace Infrastructure.Repositories
         {
             using (var banco = new ContextBase(_OptionsBuilder))
             {
-#pragma warning disable CS8603 // Possible null reference return.
                 return await
                     banco.UsuarioSistemaFinanceiro.AsNoTracking().FirstOrDefaultAsync(x => x.EmailUser.Equals(emailUsuario));
-#pragma warning restore CS8603 // Possible null reference return.
             }
         }
 
@@ -52,6 +66,21 @@ namespace Infrastructure.Repositories
 
                 await banco.SaveChangesAsync();
             }
+        }
+
+        public Task Update(FinancialSystem Objeto)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<FinancialSystem> InterfaceGeneric<FinancialSystem>.GetEntityById(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<List<FinancialSystem>> InterfaceGeneric<FinancialSystem>.List()
+        {
+            throw new NotImplementedException();
         }
     }
 }

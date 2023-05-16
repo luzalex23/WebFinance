@@ -15,6 +15,6 @@ namespace Entities.Entities
         public int Id { get; set; }
 
         [Display(Name = "Nome")]
-        public string Nome { get; set; }
+        public string? Nome { get; set; }
     }
 }

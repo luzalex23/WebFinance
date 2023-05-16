@@ -35,13 +35,11 @@ builder.Services.AddSingleton<IExpense, RepositorioDespesa>();
 builder.Services.AddSingleton<IFinancialSystem, RepositorioSistemaFinanceiro>();
 builder.Services.AddSingleton<IUserFinancialService, RepositorioUsuarioSistemaFinanceiro>();
 
-
 // SERVIÇO DOMINIO
 builder.Services.AddSingleton<IServiceCategory, CategoriaServico>();
 builder.Services.AddSingleton<IExpenseService, DespesaServico>();
 builder.Services.AddSingleton<IFinancialSystemService, SistemaFinanceiroServico>();
 builder.Services.AddSingleton<IUserFinancial, UsuarioSistemaFinanceiroServico>();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
